@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ElaveEtB = new System.Windows.Forms.Button();
+            this.DeyisB = new System.Windows.Forms.Button();
             this.AdTXB = new System.Windows.Forms.TextBox();
             this.DogumTXB = new System.Windows.Forms.TextBox();
             this.TelTXB = new System.Windows.Forms.TextBox();
@@ -43,8 +45,6 @@
             this.FileNameTXB = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.DeyisB = new System.Windows.Forms.Button();
-            this.ElaveEtB = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anket";
+            // 
+            // ElaveEtB
+            // 
+            this.ElaveEtB.Location = new System.Drawing.Point(303, 257);
+            this.ElaveEtB.Name = "ElaveEtB";
+            this.ElaveEtB.Size = new System.Drawing.Size(75, 23);
+            this.ElaveEtB.TabIndex = 4;
+            this.ElaveEtB.Text = "Elave Et";
+            this.ElaveEtB.UseVisualStyleBackColor = true;
+            this.ElaveEtB.Click += new System.EventHandler(this.ElaveEtB_Click);
+            // 
+            // DeyisB
+            // 
+            this.DeyisB.Location = new System.Drawing.Point(303, 220);
+            this.DeyisB.Name = "DeyisB";
+            this.DeyisB.Size = new System.Drawing.Size(75, 23);
+            this.DeyisB.TabIndex = 3;
+            this.DeyisB.Text = "Deyis";
+            this.DeyisB.UseVisualStyleBackColor = true;
+            this.DeyisB.Click += new System.EventHandler(this.DeyisB_Click);
             // 
             // AdTXB
             // 
@@ -156,7 +176,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(194, 212);
             this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
             // 
             // FileNameTXB
             // 
@@ -184,26 +204,6 @@
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // DeyisB
-            // 
-            this.DeyisB.Location = new System.Drawing.Point(303, 220);
-            this.DeyisB.Name = "DeyisB";
-            this.DeyisB.Size = new System.Drawing.Size(75, 23);
-            this.DeyisB.TabIndex = 3;
-            this.DeyisB.Text = "Deyis";
-            this.DeyisB.UseVisualStyleBackColor = true;
-            this.DeyisB.Click += new System.EventHandler(this.DeyisB_Click);
-            // 
-            // ElaveEtB
-            // 
-            this.ElaveEtB.Location = new System.Drawing.Point(303, 257);
-            this.ElaveEtB.Name = "ElaveEtB";
-            this.ElaveEtB.Size = new System.Drawing.Size(75, 23);
-            this.ElaveEtB.TabIndex = 4;
-            this.ElaveEtB.Text = "Elave Et";
-            this.ElaveEtB.UseVisualStyleBackColor = true;
-            this.ElaveEtB.Click += new System.EventHandler(this.ElaveEtB_Click);
             // 
             // Form1
             // 

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp7
 {
 
@@ -17,8 +18,10 @@ namespace WindowsFormsApp7
 
     public partial class Form1 : Form
     {
-
         List<User> users = new List<User>();
+
+       // public object JsonConvert { get; private set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -42,10 +45,10 @@ namespace WindowsFormsApp7
                 user.Tel = TelTXB.Text;
                 user.Dogum = DogumTXB.Text;
                 users.Add(user);
-                    
-                listBox1.DataSource =users;
+                listBox1.DataSource = null;
+                listBox1.DataSource = users;
                 listBox1.DisplayMember = "Ad";
-                
+               // MessageBox.Show(listBox1.Items.Count.ToString());
                 AdTXB.Text = string.Empty;
                 SoyadTXB.Text = string.Empty;
                 EmailTXB.Text = string.Empty;
@@ -56,7 +59,39 @@ namespace WindowsFormsApp7
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+      
+
+       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(FileNameTXB.Text!=string.Empty)
+            {
+               string json = JsonConvert.SerializeObject(users);
+                System.IO.File.WriteAllText($"{FileNameTXB.Text}.json", json);
+                FileNameTXB.Text = string.Empty;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (File.Exists($"{FileNameTXB.Text}.json"))
+            {
+                string str = File.ReadAllText($"{FileNameTXB.Text}.json");
+                var obj = JsonConvert.DeserializeObject<User[]>(str);
+                FileNameTXB.Text = string.Empty;
+                users.Clear();
+                for (int i = 0; i < obj.Length; i++)
+                {
+                users.Add(obj[i]);
+
+                }
+                listBox1.ClearSelected();
+                listBox1.DataSource = users;
+            }
+        }
+
+        private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
             ElaveEtB.Enabled = false;
             DeyisB.Enabled = true;
@@ -69,6 +104,9 @@ namespace WindowsFormsApp7
 
         private void DeyisB_Click(object sender, EventArgs e)
         {
+            ElaveEtB.Enabled = true;
+            DeyisB.Enabled = false;
+
             bool a = Int32.TryParse(TelTXB.Text, out int b);
             if (a & AdTXB.Text != string.Empty & SoyadTXB.Text != string.Empty & TelTXB.Text != string.Empty & EmailTXB.Text != string.Empty & DogumTXB.Text != string.Empty)
             {
@@ -79,37 +117,21 @@ namespace WindowsFormsApp7
                 users[listBox1.SelectedIndex].Email = EmailTXB.Text;
                 users[listBox1.SelectedIndex].Tel = TelTXB.Text;
                 users[listBox1.SelectedIndex].Dogum = DogumTXB.Text;
+                listBox1.DataSource = null;
+                listBox1.DataSource = users;
+                listBox1.DisplayMember = "Ad";
+
                 AdTXB.Text = string.Empty;
                 SoyadTXB.Text = string.Empty;
                 EmailTXB.Text = string.Empty;
                 TelTXB.Text = string.Empty;
                 DogumTXB.Text = string.Empty;
             }
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if(FileNameTXB.Text!=string.Empty)
-            {
-                string json = JsonConvert.SerializeObject(users);
-                System.IO.File.WriteAllText($"{FileNameTXB.Text}.json", json);
-                FileNameTXB.Text = string.Empty;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (File.Exists($"{FileNameTXB.Text}.json"))
-            {
-                string str = File.ReadAllText($"{FileNameTXB.Text}.json");
-                var obj = JsonConvert.DeserializeObject<User>(str);
-                FileNameTXB.Text = string.Empty;
-                users.Clear();
-                users.Add(obj);
-                listBox1.ClearSelected();
-                listBox1.DataSource = users;
-            }
+            AdTXB.Text = string.Empty;
+            SoyadTXB.Text = string.Empty;
+            EmailTXB.Text = string.Empty;
+            TelTXB.Text = string.Empty;
+            DogumTXB.Text = string.Empty;
         }
     }
     class User
