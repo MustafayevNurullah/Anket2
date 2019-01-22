@@ -95,6 +95,8 @@
             this.AdTXB.Name = "AdTXB";
             this.AdTXB.Size = new System.Drawing.Size(100, 20);
             this.AdTXB.TabIndex = 1;
+            this.AdTXB.MouseEnter += new System.EventHandler(this.AdTXB_MouseEnter);
+            this.AdTXB.MouseLeave += new System.EventHandler(this.AdTXB_MouseLeave);
             // 
             // DogumTXB
             // 
@@ -102,6 +104,8 @@
             this.DogumTXB.Name = "DogumTXB";
             this.DogumTXB.Size = new System.Drawing.Size(100, 20);
             this.DogumTXB.TabIndex = 1;
+            this.DogumTXB.MouseEnter += new System.EventHandler(this.DogumTXB_MouseEnter);
+            this.DogumTXB.MouseLeave += new System.EventHandler(this.DogumTXB_MouseLeave);
             // 
             // TelTXB
             // 
@@ -109,6 +113,8 @@
             this.TelTXB.Name = "TelTXB";
             this.TelTXB.Size = new System.Drawing.Size(100, 20);
             this.TelTXB.TabIndex = 1;
+            this.TelTXB.MouseEnter += new System.EventHandler(this.TelTXB_MouseEnter);
+            this.TelTXB.MouseLeave += new System.EventHandler(this.TelTXB_MouseLeave);
             // 
             // EmailTXB
             // 
@@ -116,6 +122,8 @@
             this.EmailTXB.Name = "EmailTXB";
             this.EmailTXB.Size = new System.Drawing.Size(100, 20);
             this.EmailTXB.TabIndex = 1;
+            this.EmailTXB.MouseEnter += new System.EventHandler(this.EmailTXB_MouseEnter);
+            this.EmailTXB.MouseLeave += new System.EventHandler(this.EmailTXB_MouseLeave);
             // 
             // SoyadTXB
             // 
@@ -123,6 +131,8 @@
             this.SoyadTXB.Name = "SoyadTXB";
             this.SoyadTXB.Size = new System.Drawing.Size(100, 20);
             this.SoyadTXB.TabIndex = 1;
+            this.SoyadTXB.MouseEnter += new System.EventHandler(this.SoyadTXB_MouseEnter);
+            this.SoyadTXB.MouseLeave += new System.EventHandler(this.SoyadTXB_MouseLeave);
             // 
             // Tel
             // 
