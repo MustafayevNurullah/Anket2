@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ElaveEtB = new System.Windows.Forms.Button();
             this.DeyisB = new System.Windows.Forms.Button();
             this.AdTXB = new System.Windows.Forms.TextBox();
-            this.DogumTXB = new System.Windows.Forms.TextBox();
             this.TelTXB = new System.Windows.Forms.TextBox();
             this.EmailTXB = new System.Windows.Forms.TextBox();
             this.SoyadTXB = new System.Windows.Forms.TextBox();
@@ -50,10 +50,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.ElaveEtB);
             this.groupBox1.Controls.Add(this.DeyisB);
             this.groupBox1.Controls.Add(this.AdTXB);
-            this.groupBox1.Controls.Add(this.DogumTXB);
             this.groupBox1.Controls.Add(this.TelTXB);
             this.groupBox1.Controls.Add(this.EmailTXB);
             this.groupBox1.Controls.Add(this.SoyadTXB);
@@ -68,6 +68,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anket";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(99, 151);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(206, 20);
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // ElaveEtB
             // 
@@ -95,17 +102,8 @@
             this.AdTXB.Name = "AdTXB";
             this.AdTXB.Size = new System.Drawing.Size(100, 20);
             this.AdTXB.TabIndex = 1;
-            this.AdTXB.MouseEnter += new System.EventHandler(this.AdTXB_MouseEnter);
-            this.AdTXB.MouseLeave += new System.EventHandler(this.AdTXB_MouseLeave);
-            // 
-            // DogumTXB
-            // 
-            this.DogumTXB.Location = new System.Drawing.Point(99, 148);
-            this.DogumTXB.Name = "DogumTXB";
-            this.DogumTXB.Size = new System.Drawing.Size(100, 20);
-            this.DogumTXB.TabIndex = 1;
-            this.DogumTXB.MouseEnter += new System.EventHandler(this.DogumTXB_MouseEnter);
-            this.DogumTXB.MouseLeave += new System.EventHandler(this.DogumTXB_MouseLeave);
+            this.AdTXB.Enter += new System.EventHandler(this.AdTXB_Enter);
+            this.AdTXB.Leave += new System.EventHandler(this.AdTXB_Leave);
             // 
             // TelTXB
             // 
@@ -113,8 +111,8 @@
             this.TelTXB.Name = "TelTXB";
             this.TelTXB.Size = new System.Drawing.Size(100, 20);
             this.TelTXB.TabIndex = 1;
-            this.TelTXB.MouseEnter += new System.EventHandler(this.TelTXB_MouseEnter);
-            this.TelTXB.MouseLeave += new System.EventHandler(this.TelTXB_MouseLeave);
+            this.TelTXB.Enter += new System.EventHandler(this.TelTXB_Enter);
+            this.TelTXB.Leave += new System.EventHandler(this.TelTXB_Leave);
             // 
             // EmailTXB
             // 
@@ -122,8 +120,8 @@
             this.EmailTXB.Name = "EmailTXB";
             this.EmailTXB.Size = new System.Drawing.Size(100, 20);
             this.EmailTXB.TabIndex = 1;
-            this.EmailTXB.MouseEnter += new System.EventHandler(this.EmailTXB_MouseEnter);
-            this.EmailTXB.MouseLeave += new System.EventHandler(this.EmailTXB_MouseLeave);
+            this.EmailTXB.Enter += new System.EventHandler(this.EmailTXB_Enter);
+            this.EmailTXB.Leave += new System.EventHandler(this.EmailTXB_Leave);
             // 
             // SoyadTXB
             // 
@@ -131,8 +129,8 @@
             this.SoyadTXB.Name = "SoyadTXB";
             this.SoyadTXB.Size = new System.Drawing.Size(100, 20);
             this.SoyadTXB.TabIndex = 1;
-            this.SoyadTXB.MouseEnter += new System.EventHandler(this.SoyadTXB_MouseEnter);
-            this.SoyadTXB.MouseLeave += new System.EventHandler(this.SoyadTXB_MouseLeave);
+            this.SoyadTXB.Enter += new System.EventHandler(this.SoyadTXB_Enter);
+            this.SoyadTXB.Leave += new System.EventHandler(this.SoyadTXB_Leave);
             // 
             // Tel
             // 
@@ -239,7 +237,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox AdTXB;
-        private System.Windows.Forms.TextBox DogumTXB;
         private System.Windows.Forms.TextBox TelTXB;
         private System.Windows.Forms.TextBox EmailTXB;
         private System.Windows.Forms.TextBox SoyadTXB;
@@ -254,6 +251,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button ElaveEtB;
         private System.Windows.Forms.Button DeyisB;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
